@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} Teacher List {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .heading.heading-icon {
+        display: block;
+    }
+
+    .teacher-area.padding-lg {
+        padding-bottom: 55px;
+        padding-top: 55px;
+    }
+
+    .teacher-area .inner {
+        border: 1px solid #999999;
+        text-align: center;
+        margin-bottom: 28px;
+        padding: 40px 25px;
+    }
+
+    .our-teacher .cnt-block:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        border: 0;
+    }
+
+    .teacher-area .inner h3 {
+        color: #3c3c3c;
+        font-size: 24px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        padding: 10px 0;
+    }
+
+    .teacher-area .inner p {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+    }
+
+    .teacher-area .inner img {
+        display: inline-block;
+    }
+
+
+    .our-teacher {}
+
+    .our-teacher .cnt-block {
+        float: left;
+        width: 100%;
+        background: #fff;
+        padding: 30px 20px;
+        text-align: center;
+        border: 2px solid #d5d5d5;
+        margin: 0 0 28px;
+    }
+
+    .our-teacher .cnt-block figure {
+        width: 148px;
+        height: 148px;
+        border-radius: 100%;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .our-teacher .cnt-block img {
+        width: 148px;
+        height: 148px;
+        border-radius: 100%;
+    }
+
+    .our-teacher .cnt-block h3 {
+        color: #2a2a2a;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 6px 0;
+    }
+
+    .our-teacher .cnt-block h3 a {
+        text-decoration: none;
+        color: #2a2a2a;
+    }
+
+    .our-teacher .cnt-block h3 a:hover {
+        color: #337ab7;
+    }
+
+    .our-teacher .cnt-block p {
+        color: #2a2a2a;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+
+    .our-teacher .cnt-block .follow-us {
+        margin: 20px 0 0;
+    }
+
+    .our-teacher .cnt-block .follow-us li {
+        display: inline-block;
+        width: auto;
+        margin: 0 5px;
+    }
+
+    .our-teacher .cnt-block .follow-us li .fa {
+        font-size: 24px;
+        color: #767676;
+    }
+
+    .our-teacher .cnt-block .follow-us li .fa:hover {
+        color: #025a8e;
+    }
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+<div class="main-content py-2 bg-light">
+    <div class="container-lg mt-0 ">
+
+        <section class="our-teacher">
+            <div class="">
+                <ul class="row">
+                    {% for teacher in teachers %}
+                    <li class="col-12 col-md-6 col-lg-3">
+                        <div class="cnt-block equal-hight" style="height: 349px;">
+                            <figure><img src="/media/{{ teacher.teacher_image }}" class="img-responsive" alt=""></figure>
+                            <a href={% url 'App_Login:teacher_details' pk=teacher.pk %}><h3>{{teacher.teacher_name}}</h3></a>
+                            <p>{{teacher.teacher_designation}}</p>
+
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </section>
+    </div>
+
+    {% endblock %}

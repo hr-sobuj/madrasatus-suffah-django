@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} Notice Board {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+<div class="main-content py-2 bg-light">
+    <div class="container-lg mt-3 ">
+        
+
+        <div class="notice ">
+            <p class="title-head mb-0">Notices</p>
+            <ul class="list-unstyled ">
+                {% for notice in notices %}
+                <li class="single_notice p-2">
+                    <span class="date-wrapper mt-0 mr-2 float-left">
+                        <span class="date"><span
+                                class="d-block">{{notice.publish_date|date:"d"}}</span>{{notice.publish_date|date:"M"}}
+                                {{notice.publish_date|date:"Y"}}</span>
+                    </span>
+                    <div class="notice_right p-0 m-0 ">
+                        <p style="line-height: 22px;" class="m-0">
+                            <a style="font-size:13px; font-weight: bold; " href={% url 'App_Home:notice' pk=notice.pk %} class="pb-2">
+                                {{ notice.notice_title }}
+                            </a>
+                        </p>
+
+                    </div>
+                    <div class="d-flex justify-content-end  p-0 m-0">
+
+                        <a href={% url 'App_Home:notice' pk=notice.pk %} class="btn btn-xs btn-dark" style="color: #fff;text-align: end;">Read
+                            more</a>
+                    </div>
+                </li>
+                {% endfor %}
+
+               
+
+            </ul>
+        </div>
+
+        <!--Pagination-->
+        <div class="p-4">
+            <div class="pagination justify-content-center">
+                <span class="step-links">
+                    {% if notices.has_previous %}
+                    <a href="?page=1" class="btn btn-info btn-xs">&laquo; First</a>
+                    <a href="?page={{ notices.previous_page_number }}" class="btn btn-info btn-xs">Previous</a>
+                    {% endif %}
+
+
+
+                    {% if notices.has_next %}
+                    <a href="?page={{ notices.next_page_number }}" class="btn btn-info btn-xs">Next</a>
+                    <a href="?page={{ notices.paginator.num_pages }}" class="btn btn-info btn-xs">Last
+                        &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+        <!--end of Pagination-->
+
+    </div>
+</div>
+
+{% endblock %}

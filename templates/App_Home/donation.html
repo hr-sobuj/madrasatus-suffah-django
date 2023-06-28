@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} Donation {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+<div class="main-content py-2 bg-light">
+    <div><img src={% static 'assets/images/make-donation.png'%} alt="" class="img-fluid" style="height:250px;width: 100%;"></div>
+    <div class="container-lg mt-3 ">
+        <center>
+            
+        <p>
+            মাদরাসার ব্যাংক একাউন্টঃ <br>
+            MD ARIFUL ISLAM <br>
+            MUdaraba Savings A/C No: 0071120108934<br>
+            AIBL,Rajshahi Branch <br><br>
+            
+           <b class="font-weight-bold" style="font-size: 25px;">রকেটঃ 017298948007</b>  <br>
+           <b class="font-weight-bold" style="font-size: 25px;">bKash: 01715319259 </b> 
+        </p>
+    </center>
+    </div>
+</div>
+
+{% endblock %}

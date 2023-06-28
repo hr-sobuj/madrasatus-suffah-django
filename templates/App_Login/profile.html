@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} {{title}} {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+{% if user.is_authenticated %}
+
+
+
+<div class="main-content py-5 bg-light">
+
+    <div class="container-lg mt-2">
+        <section>
+            <div class="p-3 mb-4 rounded" style="background-color:#e9ecef"><span class="text-dark font-weight-bold"><a
+                        href={% url 'App_Login:update_profile' %} class="text-decoration-none text-success"><i class="fa fa-user"></i>
+                        {{ user.username}}</a></span><span class="float-right"><a href={% url 'App_Login:logout' %}
+                        class="text-decoration-none text-danger font-weight-bold"><i class="fa fa-power-off"></i> Log
+                        Out</a></span></div>
+            <div class="row mb-4">
+                <div class="col-12 col-md-4 mb-2">
+                    <a href={% url 'App_Blog:create' %} class="btn btn-primary p-4 btn-lg" style="width:100%">Blog</a>
+                </div>
+                <div class="col-12 col-md-4 mb-2">
+                    <a href={% url 'App_Home:create_notice' %} class="btn btn-info p-4 btn-lg"
+                        style="width:100%">Notice</a>
+                </div>
+                <div class="col-12 col-md-4 mb-2">
+                    <a href={% url 'App_Home:create_gallery' %} class="btn btn-warning p-4 btn-lg"
+                        style="width:100%">Gallery</a>
+                </div>
+                <div class="col-12 col-md-4 mb-2">
+                    <a href={% url 'App_Blog:list' %} class="btn btn-success p-4 btn-lg" style="width:100%">Manage
+                        Blog</a>
+                </div>
+                <div class="col-12 col-md-4 mb-2">
+                    <a href={% url 'App_Home:update_notice' %} class="btn btn-danger p-4 btn-lg"
+                        style="width:100%">Manage Notice</a>
+                </div>
+                <div class="col-12 col-md-4 mb-2">
+                    <a href={% url 'App_Home:update_gallery' %} class="btn btn-secondary p-4 btn-lg"
+                        style="width:100%">Manage Gallery</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

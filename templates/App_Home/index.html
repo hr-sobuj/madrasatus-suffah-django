@@ -1,0 +1,482 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+<!-- {% block title_block %} Madrasatus Suffah {% endblock %} -->
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+
+<!-- START SECTION BANNER -->
+<div class="banner_section slide_medium shop_banner_slider staggered-animation-wrap">
+    <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active background_bg" data-img-src={% static 'slide/slide1.jpg' %}>
+                <div class="banner_slide_content">
+                    <div class="container-lg">
+                        <!-- STRART CONTAINER -->
+                        <div class="row">
+                            <div class="col-lg-7 col-9">
+                               
+                            </div>
+                        </div>
+                    </div><!-- END CONTAINER-->
+                </div>
+            </div>
+            <div class="carousel-item background_bg" data-img-src={% static 'slide/slide2.jpg' %}>
+                <div class="banner_slide_content">
+                    <div class="container">
+                        <!-- STRART CONTAINER -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                            </div>
+                        </div>
+                    </div><!-- END CONTAINER-->
+                </div>
+            </div>
+            <div class="carousel-item background_bg" data-img-src={% static 'slide/slide3.jpg' %}>
+                <div class="banner_slide_content">
+                    <div class="container">
+                        <!-- STRART CONTAINER -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                            </div>
+                        </div>
+                    </div><!-- END CONTAINER-->
+                </div>
+            </div>
+            <div class="carousel-item background_bg" data-img-src={% static 'slide/slide4.jpg' %}>
+                <div class="banner_slide_content">
+                    <div class="container">
+                        <!-- STRART CONTAINER -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                            </div>
+                        </div>
+                    </div><!-- END CONTAINER-->
+                </div>
+            </div>
+            <div class="carousel-item background_bg" data-img-src={% static 'slide/slide5.jpg' %}>
+                <div class="banner_slide_content">
+                    <div class="container">
+                        <!-- STRART CONTAINER -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                            </div>
+                        </div>
+                    </div><!-- END CONTAINER-->
+                </div>
+            </div>
+            <div class="carousel-item background_bg" data-img-src={% static 'slide/slide6.jpg' %}>
+                <div class="banner_slide_content">
+                    <div class="container">
+                        <!-- STRART CONTAINER -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                            </div>
+                        </div>
+                    </div><!-- END CONTAINER-->
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"><i
+                class="ion-chevron-left"></i></a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"><i
+                class="ion-chevron-right"></i></a>
+    </div>
+</div>
+<!-- END SECTION BANNER -->
+
+
+<!-- START MAIN CONTENT  -->
+<div class="main_content mt-4">
+    <div class="container-lg">
+        <!--START HISTORY  -->
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="panel-group mt-1 pt-1 border-0" id="accordion">
+
+
+                    <div class="panel panel-success border-0">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#the_madrasa">
+                                <h4 class="panel-title">
+                                    <span class="lnr lnr-graduation-hat" style="font-size: 21px;"></span> The Madrasa
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="the_madrasa" class="panel-collapse collapse in">
+                            <div class="panel-body border-0">
+                                <ul class="list-unstyled list-group">
+                                    <li class="list-group-item"><a href="">Our Story</a></li>
+                                    <li class="list-group-item"><a href="">Our Vision</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-success mt-2 border-0">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#admin">
+                                <h4 class="panel-title">
+                                    <span class="lnr lnr-users" style="font-size: 19px;"></span> Administration
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="admin" class="panel-collapse collapse in">
+                            <div class="panel-body border-0">
+                                <ul class="list-unstyled list-group">
+                                    <li class="list-group-item"><a href={% url "App_Login:teacher_list" %}>Teacher</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-success mt-2 border-0">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#faculty">
+                                <h4 class="panel-title">
+                                    <span class="lnr lnr-apartment"></span> Faculty
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="faculty" class="panel-collapse collapse in">
+                            <div class="panel-body border-0">
+                                <ul class="list-unstyled list-group">
+                                    <li class="list-group-item"><a href="">Our Story</a></li>
+                                    <li class="list-group-item"><a href="">Our Vision</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="panel panel-success mt-2 border-0">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#student">
+                                <h4 class="panel-title">
+                                    <span class="lnr lnr-user"></span> Student
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="student" class="panel-collapse collapse in">
+                            <div class="panel-body border-0">
+                                <ul class="list-unstyled list-group">
+                                    <li class="list-group-item"><a href="">Our Story</a></li>
+                                    <li class="list-group-item"><a href="">Our Vision</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="panel panel-success mt-2 border-0">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#blog">
+                                <h4 class="panel-title">
+                                    <span class="lnr lnr-pencil"></span> Blog
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="blog" class="panel-collapse collapse in">
+                            <div class="panel-body border-0">
+                                <ul class="list-unstyled list-group">
+                                    <li class="list-group-item"><a href="">Our Story</a></li>
+                                    <li class="list-group-item"><a href="">Our Vision</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="panel panel-success mt-2 border-0">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#donate">
+                                <h4 class="panel-title">
+                                    <span class="lnr lnr-gift"></span> Donation
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="donate" class="panel-collapse collapse in">
+                            <div class="panel-body border-0">
+                                <ul class="list-unstyled list-group">
+                                    <li class="list-group-item"><a href="">Our Story</a></li>
+                                    <li class="list-group-item"><a href="">Our Vision</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="panel panel-success mt-2 border-0">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#useful_link">
+                                <h4 class="panel-title">
+                                    <span class="lnr lnr-link"></span> Useful Link
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="useful_link" class="panel-collapse collapse in">
+                            <div class="panel-body border-0">
+                                <ul class="list-unstyled list-group">
+                                    <li class="list-group-item"><a href="">Our Story</a></li>
+                                    <li class="list-group-item"><a href="">Our Vision</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- HISTORY  -->
+            <div class="col-12 col-sm-12 col-md-8">
+                <p class="text-justify" style="font-size: 13px; line-height: 1.6;">
+
+                    মাদরাসাতুস সুফ্ফাহ আল আরাবিয়্যাহ রাজশাহী একটি খালেস দ্বীনি শিক্ষা প্রতিষ্ঠান। বিগত চার বছরে এখান
+                    থেকে প্রায় ত্রিশ জন শিক্ষার্থী অত্যন্ত সফলভাবে পবিত্র কুরআন মজীদ হিফজ ও হিফজ রিভিশন করে দেশের সব
+                    খ্যাতনামা বিদ্যাপীঠে সুনামের সাথে অধ্যয়ন করছে। সেই সাথে বিভিন্ন স্থানে হিফজুল কুরআন প্রতিযোগিতা ও
+                    বিগত সালগুলোতে jsc,psc পরীক্ষায় ধারাবাহিকভাবে সাফল্য অর্জন করায় ইতিমধ্যে মানসমম্মত প্রতিষ্ঠানের
+                    খেতাব লাভ করেছে।
+                    প্রতিষ্ঠানটিতে নূরানী মক্তব ও হিফজ বিভাগের পাশাপাশি সময়োপযোগী কিতাবখানা চালু আছে। এই বিভাগে আমরা
+                    পরিপূর্ণ মাদানী নেসাবকে অনুসরণ করে মাত্র তিন বছরে হেদায়াতুন্নাহু জামাত পর্যন্ত পড়ানো সহ জেনারেল ষষ্ঠ
+                    শ্রেণী থেকে অষ্টম শ্রেণী পর্যন্ত পাঠদান করে থাকি।
+                    বেসরকারি এই প্রতিষ্ঠানটি বর্তমানে একটি ভাড়া বাসায় পরিচালিত হচ্ছে। যার অবস্থান রাজশাহী
+                    ক্যান্টনমেন্টের দক্ষিণ দেওয়াল সংলগ্ন রোড ৯\২ উপশহর রাজশাহী।
+                    লক্ষ্য-উদ্দেশ্য :
+                    ইসলামী জ্ঞান ভাণ্ডার সংরক্ষণ ও তার ব্যাপক প্রচার প্রসার। যার মাধ্যমে আল্লাহ তা'আলার বিধানাবলী ও
+                    সুন্নাতে নববী প্রতিষ্ঠার লক্ষ্যে নিয়মতান্ত্রিক শিক্ষা দীক্ষা দিয়ে দূরদর্শী হক্কানী হাফেজ আলেম তৈরী
+                    করা এবং তাদেরকে বিশেষ প্রশিক্ষণ প্রদানের মাধ্যমে দেশ,জাতি ও বিশ্বসেবায় নিয়োজিত হওয়ার উপযুক্ত করে গড়ে
+                    তোলা। সর্বোপরি মহান আল্লাহর সন্তুষ্টি অর্জন করা।
+                </p>
+            </div>
+        </div>
+
+        <!-- END HISTORY  -->
+
+        <!-- START MESSAGE AND NOTICE  -->
+
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="msg">
+                    <p class="title-head m-0 ">Priciple Message </p>
+                    <div class="pic" style="float: left;">
+                        <figure>
+                            <img class="img-responsive img-fluid principle-pic"
+                                src={% static 'slide/slide4.jpg' %} alt=""
+                                style=" margin-right:10px; height: auto;  border:1px solid #ddd; " />
+                            <figcaption style="text-align: center;"><b style="font-size:10px;">হাফেজ মাওলানা আরীফুল ইসলাম</b>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="txt">
+                        <p class="text-justify" style="font-size: 13px; line-height: 1.6;">
+                            সমস্ত প্রশংসা একমাত্র আল্লাহর জন্য, যিনি মানব জাতিকে সত্য সঠিক পথ দেখানোর জন্য মহাগ্রন্থ আল
+                            কুরআন অবতীর্ণ করেছেন। সেই সাথে মানব জাতিকে তাঁদেরই কল্যাণে সব ধরণের কল্যাণের উৎস চেনাতে ও
+                            বাস্তব জীবনে তার পরিপূর্ণ অনুশীলনের মাধ্যমে আদর্শবাদী খাঁটি ইনসান বানাতে প্রেরণ করেছেন
+                            সৃষ্টির সেরা মানব হযরত মুহাম্মদ ( সা.)কে। সাল্লাল্লহু আলায়হি ওয়া সাল্লাম।
+                            মহাগ্রন্থ আল কুরআন সব সময়ের জন্য সকল মানুষের আলোকবর্তিকা। কুরআনের শিক্ষাই যুগে যুগে মানুষকে
+                            মানুষ করেছে। আদর্শ বিবর্জিত, নীতি- নৈতিকতাহীন শিক্ষা কিছুতেই প্রকৃত মূল্যবোধের মানুষ উপহার
+                            দিতে পারেনি কখনো। তাই আজকের এই আধুনিক বিশ্বে মানুষ সবকিছু হাতের মুঠোয় পাওয়ার পরও দিশেহারা
+                            হয়ে শান্তির সুবাতাস অন্বেষণ করছে। সন্তানদের নামীদামি বিদ্যাপীঠে পাঠদান করে উচ্চ শিক্ষায়
+                            শিক্ষিত করেও প্রতিনিয়ত এমন সব রোমহর্ষক ঘটনা একের পর এক ঘটিয়ে চলেছে, যা বিবেকবান মানুষ কখনো
+                            কল্পনাও করতে পারে না। এ যেন বাতির নীচেই অন্ধকার।
+                            আমরা এই অন্ধকার দূর করতে চাই। সমাজ ও রাষ্ট্রের সর্বত্র বিশ্বজনীন সুমহান ইসলামী শিক্ষার বীজ
+                            বপনের মাধ্যমে। আমরা বিশ্বাস করি এবং ঐতিহাসিকভাবেও এটা সুবিদিত সুপ্রমাণিত যে, একমাত্র ইসলামী
+                            শিক্ষাই বিজ্ঞানের উৎকর্ষতায় এগিয়ে যাওয়া গোটা পৃথিবীর মনুষ্যত্বহারা মানুষগুলিকে মানবিক
+                            মূল্যবোধে রাঙাতে পারে।
+                            গোটা পৃথিবীকে তাই নতুন করে সাজাতে সবার আগে মানব বাগানের ফুলগুলোকে দরদী মালীর সাহচর্য দিয়ে
+                            পরম যত্নে গড়ে তোলার মানসে ২০১৬ সালের ১৯ অক্টোবর " মাদরাসাতুস সুফ্ফাহ আল আরাবিয়্যাহ রাজশাহী "
+                            নামে এক ইলমী কানুনের শুভ উদ্বোধন হয়। এ আশায় এ আকাঙ্ক্ষায় যে, সেই নববী সুফ্ফাহর আসহাবদের মতোই
+                            যেন হয় এই সুফ্ফাহর আবনাদের রাত্র দিনের সারাটা ক্ষণ।
+                            আলহামদু লিল্লাহ, আমরা হাঁটি হাঁটি পা পা করে স্বপ্ন পূরণের পথে এগিয়ে চলেছি। আল্লাহ পাক কবুল
+                            করেন মকবুল করেন। আমিন।
+                            এই ইলমী কানুনের বৈশিষ্ট্য হলো- গতানুগতিক ধারা পরিবর্তন করে প্রিয় শিক্ষার্থীদের মেধা ও
+                            মননশীলতার বিকাশে বাস্তবসম্মত যুগোপযোগী শিক্ষা কারিকুলামে পাঠদান করা। যেন প্রত্যেকটি
+                            শিক্ষার্থী ইলমে ওহীর জ্ঞানে পারদর্শিতা অর্জনের পাশাপাশি আধুনিক জ্ঞান-বিজ্ঞানেও হয়ে ওঠে সবার
+                            সেরা।
+                            অতএব সচেতন দায়িত্বশীল অভিভাবকদের নিজ নিজ সন্তানকে ভর্তি করিয়ে আমাদের এ অগ্রযাত্রায় সক্রিয়
+                            অংশগ্রহণ করে বর্তমান যুগের চাহিদা পূরণে অগ্রণী ভূমিকা পালনে উদাত্ত আহ্বান করছি।
+                            মাআসসালাম
+
+                            <!-- <a href="#" class="text-danger">Read more >></a> -->
+
+                            <p style="float: right; color: #000; font-weight: bold;">
+                                হাফেজ মাওলানা আরীফুল ইসলাম<br>
+                                প্রতিষ্ঠাতা পরিচালক <br>
+                            </p>
+                            <p></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                <div class="border">
+                    <div class="notice ">
+                        <p class="title-head mb-0">Notices</p>
+                        <ul class="list-unstyled ">
+                            {% for notice in notices|slice:"6" %}
+                            <li class="single_notice p-2">
+                                <span class="date-wrapper mt-0 mr-2 float-left">
+                                    <span class="date"><span
+                                            class="d-block">{{notice.publish_date|date:"d"}}</span>{{notice.publish_date|date:"M"}}
+                                        {{notice.publish_date|date:"Y"}}</span>
+                                </span>
+                                <div class="notice_right p-0 m-0 ">
+                                    <p style=" line-height: 1.6; font-size: 13px;" class="m-0">
+                                        <a style="font-size:13px; font-weight: bold;  line-height: 1.6;"
+                                            href={% url 'App_Home:notice' pk=notice.pk %} class="pb-2">
+                                            {{ notice.notice_title }}
+                                        </a>
+                                    </p>
+
+                                </div>
+                                <div class="d-flex justify-content-end  p-0 m-0">
+
+                                    <a href={% url 'App_Home:notice' pk=notice.pk %} class="btn btn-xs btn-dark"
+                                        style="color: #fff;text-align: end;">Read
+                                        more</a>
+                                </div>
+                            </li>
+                            {% endfor %}
+
+                            <li>
+                                <div class="text-center p-2"><a href={% url 'App_Home:allnotice' %}
+                                        class="btn btn-dark btn-xs">View All Notice</a>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- END MESSAGE AND NOTICE  -->
+
+        <!-- START GLANCE  -->
+        <div class="glance py-3">
+            <!-- <p class="h3 text-center font-weight-bold">
+                At a glance
+            </p> -->
+            <div class="row text-center">
+                <div class="col-12 col-md-6 col-lg-3 py-2">
+                    <div class="counter pb-4 pt-5 bg-light">
+                        <span class="lnr lnr-users" style="font-size: 40px; "></span>
+                        <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
+                        <p class="count-text font-weight-bold">Students</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-2">
+                    <div class="counter pb-4 pt-5 bg-light">
+                        <span class="lnr lnr-user" style="font-size: 40px; "></span>
+                        <h2 class="timer count-title count-number" data-to="15" data-speed="1500"></h2>
+                        <p class="count-text font-weight-bold">Teachers</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-2">
+                    <div class="counter pb-4 pt-5 bg-light">
+                        <span class="lnr lnr-apartment" style="font-size: 40px;"></span>
+                        <h2 class="timer count-title count-number" data-to="4" data-speed="1500"></h2>
+                        <p class="count-text font-weight-bold">Faculty</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-2">
+                    <div class="counter pb-4 pt-5 bg-light">
+                        <span class="lnr lnr-map-marker" style="font-size: 40px;"></span>
+                        <h2 class="timer count-title count-number" data-to="3" data-speed="1500"></h2>
+                        <p class="count-text font-weight-bold">Area</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- END GLANCE  -->
+
+        <!-- START BLOG  -->
+        <div class="blog mb-4">
+            <p class="title-head d-block mb-2">
+                Blog
+            </p>
+            <div class="row">
+                {% if blog %}
+                {% for post in blog|slice:":4" %}
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+
+                    <div class="card bg-light" style="height: 100%;border:none">
+                        {% if post.blog_image %}
+                        <a href={% url 'App_Blog:details' pk=post.pk %}><img class="card-img-top" width="207"
+                                height="123" src="/media/{{ post.blog_image}}" alt=""></a>
+                        {% else %}
+                        <a href={% url 'App_Blog:details' pk=post.pk %}><img class="card-img-top" width="207"
+                                height="123" src={% static 'assets/images/no_pic.png' %} alt=""></a>
+                        {% endif %}
+                        <div class="card-body p-2 mt-1">
+                            <span class="card-text mt-2 pb-2">
+                                <ul class="list-unstyled list-inline m-0">
+                                    <li class="list-inline-item"><i class="fa fa-user-o"></i><a
+                                            href="">{% if post.author %} Admin {%else %} Admin {%endif%}</a></li>
+                                    <li class="list-inline-item"><i class="fa fa-calendar"></i>
+                                        {{post.publish_date|date:"d M Y"}}</li>
+                                </ul>
+                            </span>
+                            <a href={% url 'App_Blog:details' pk=post.pk %}>
+                                <p class="card-text m-0 pt-2 text-justify"
+                                    style="height: 20%; font-size: 13px;  line-height: 1.6;">
+                                    {{ post.blog_title|title}}</p>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="text-center"><a href={% url 'App_Blog:blog' %} class="btn btn-dark btn-xs">View All Blog</a>
+            </div>
+        </div>
+        <!-- END BLOG  -->
+
+        <!-- START MAP AND YOUTUBE -->
+
+        <div class="row mb-5">
+            <div class="col-12 col-md-6 mb-4">
+                <div class="">
+                    <p class="title-head mb-2">
+                        Youtube Channel
+                    </p>
+                    <div class="">
+                        <iframe src="https://www.youtube.com/embed/o0pBmwgHB0g" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mb-4">
+                <div class="">
+                    <p class="title-head mb-2">
+                        Map & Get Direction
+                    </p>
+                    <div class="">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.0343902763657!2d88.59640921482816!3d24.380107034282705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbee5447d0c9b7%3A0xf7ffb788ed6569c3!2sUposhohor%2C%20Rajshahi!5e0!3m2!1sen!2sbd!4v1614475305355!5m2!1sen!2sbd"
+                             style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- END MAP AND YOUTUBE  -->
+
+
+
+    </div>
+
+</div>
+<!-- END MAIN CONTENT  -->
+
+{% endblock %}

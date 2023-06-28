@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} {{ notice.notice_title }} {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+<div class="main-content py-2 bg-light">
+    <div class="container-lg mt-3 ">
+
+
+        <div class="notice ">
+            <p class="title-head mb-0">Notices</p>
+            <div class="single_notice pb-5 pt-3">
+                <span class="date-wrapper mt-0 mr-2 float-left">
+                    <span class="date"><span
+                            class="d-block">{{notice.publish_date|date:"d"}}</span>{{notice.publish_date|date:"M"}}
+                        {{notice.publish_date|date:"Y"}}</span>
+                </span>
+                <div class="notice_right p-0 m-0 ">
+                    <p style="line-height: 22px;" class="m-0">
+                        <a style="font-size:13px; font-weight: bold; " href={% url 'App_Home:notice' pk=notice.pk %}
+                            class="pb-2">
+                            {{ notice.notice_title }}
+                        </a>
+                    </p>
+
+                </div>
+                <div class="d-flex justify-content-end  p-0 m-0">
+
+                    <a href={% url 'App_Home:notice' pk=notice.pk %} class="" style="color: #fff;text-align: end;"></a>
+                </div>
+            </div>
+
+            <div>
+                <div class="pt-2">
+                    <p class="p-0 m-0"><b>Time: </b><span>{{ notice.publish_date|date:"H : i a" }}</span></p>
+                    <p><b>Description: </b> <span style="font-size: 12px;">{{ notice.notice_title }}</span></p>
+                </div>
+                <div class="pt-0 pb-3"><a href="/media/{{ notice.notice_pdf }}" class="btn btn-danger btn-xs"
+                        download={{ notice.notice_title }}>Click Here To Download</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

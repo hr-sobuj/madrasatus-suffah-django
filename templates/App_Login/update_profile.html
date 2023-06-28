@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} {{title}} {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+{% if user.is_authenticated %}
+
+
+
+<div class="main-content py-5 bg-light">
+
+    <div class="container-lg mt-2">
+        <nav aria-label="breadcrumb" class="mb-5 p-3" style="background-color:#e9ecef">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href={% url 'App_Login:profile' %}>Profile</a></li>
+              <li class="breadcrumb-item active text-primary font-weight-bold" aria-current="page">Update Profile</li>
+            </ol>
+          </nav>
+
+       <form method="POST" enctype="multipart/form-data">
+           {{ form |crispy }}
+           {% csrf_token %}
+           <button type="submit" class="btn btn-dark btn-sm mt-3">Update</button>
+       </form>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

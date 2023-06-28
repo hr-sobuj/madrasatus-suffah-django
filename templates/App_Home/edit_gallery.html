@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} Create Gallery {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+<div class="main-content py-2 bg-light">
+    <div class="container-lg mt-3 pt-5">
+        <nav aria-label="breadcrumb" class="mx-3 p-3" style="background-color:#e9ecef">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href={% url 'App_Login:profile' %}>Profile</a></li>
+              <li class="breadcrumb-item active text-primary font-weight-bold" aria-current="page">Edit Notice</li>
+            </ol>
+          </nav>
+        <div class=" py-5 p-3 mb-5">
+            <form method="POST" enctype="multipart/form-data">
+                {{ form|crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-dark btn-sm">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

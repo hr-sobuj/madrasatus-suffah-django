@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} {{title}} {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+<div class="main-content py-5 bg-light">
+    <div class="container-lg mt-3 py-5">
+        <div class="login py-5 p-3 mb-5">
+            <form method="POST">
+                {{ form|crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-dark btn-xs">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

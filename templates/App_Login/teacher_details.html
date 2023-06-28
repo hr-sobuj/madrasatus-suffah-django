@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+<!-- LOAD STATIC FILES  -->
+{% load static %}
+<!-- LOAD CRISPY FORM -->
+{% load crispy_forms_tags %}
+<!-- TITLE BLOCK  -->
+{% block title_block %} {{ teacher.teacher_name}} {% endblock %}
+<!-- CUSTOM CSS BLOCK  -->
+{% block style_block %}
+<style>
+
+</style>
+{% endblock %}
+<!-- BODY BLOCK -->
+{% block body_block %}
+
+<div class="main-content py-2 bg-light">
+    <div class="container-lg mt-0 ">
+        <center>
+            <img src="/media/{{ teacher.teacher_image }}" class="img-fluid rounded-circle" width="200" height="200" alt="">
+            
+                <h3 class="pt-4">{{teacher.teacher_name}}</h3>
+            <p>{{teacher.teacher_designation}}</p>
+            <p class="text-justify">{{ teacher.teacher_details }}</p>
+            <p class="text-justify">{{ teacher.teacher_comment }}</p>
+        </center>
+    </div>
+
+    {% endblock %}

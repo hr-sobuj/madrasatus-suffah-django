@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="Anil z" name="author">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- SITE TITLE -->
+    <title> {% block title_block %}{{title}}{% endblock %}</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href={% static 'assets/images/logo.png' %}>
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href={% static 'assets/css/animate.css' %}>
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href={% static 'assets/bootstrap/css/bootstrap.min.css'%}>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href={% static 'assets/bootstrap/css/bootstrap.min.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/all.min.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/ionicons.min.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/themify-icons.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/linearicons.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/flaticon.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/simple-line-icons.css' %}>
+    <!-- <link rel="stylesheet" href={% static 'icon/icon-font.min.css' %}>
+    <link rel="stylesheet" href={% static 'icon/font-awesome.min.css' %}> -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--- owl carousel CSS-->
+    <link rel="stylesheet" href={% static 'assets/owlcarousel/css/owl.carousel.min.css' %}>
+    <link rel="stylesheet" href={% static 'assets/owlcarousel/css/owl.theme.css' %}"">
+    <link rel="stylesheet" href={% static 'assets/owlcarousel/css/owl.theme.default.min.css' %}>
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href={% static 'assets/css/magnific-popup.css' %}>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href={% static 'assets/css/slick.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/slick-theme.css' %}>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href={% static 'assets/css/style.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/responsive.css' %}>
+    <link rel="stylesheet" href={% static 'css/panel.css' %}>
+
+
+    <link rel="stylesheet" href={% static 'css/mystyle.css' %}>
+    <link rel="stylesheet" href={% static 'css/myresponsive.css' %}>
+
+    <!-- photo gallery  -->
+    <link rel="stylesheet" href={% static 'css/bootstrap-lightbox.min.css' %}>
+    <!-- <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-lightbox/0.7.0/bootstrap-lightbox.min.css"
+        integrity="sha512-HcpcGEVlDS6bKaCjypbf5ejXBI6jnNq7fiGoqDa1fhruwjGPokao6T/OryomhzGmWotPpDa3QVTUsK0HjZtuAQ=="
+        crossorigin="anonymous" /> -->
+
+
+
+    <!-- DATA TABLE  -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+
+
+    {% block style_block %}
+    <style>
+
+    </style>
+    {% endblock%}
+
+</head>
+
+<body>
+
+
+    {% include "header.html" %}
+
+    {% block body_block %}
+    {% endblock %}
+
+    {% block script_block %}
+
+    {% endblock %}
+    {% include "footer.html" %}
+    <!-- Latest jQuery -->
+    <script src={% static 'assets/js/jquery-1.12.4.min.js' %}></script>
+    <!-- popper min js -->
+    <script src={% static 'assets/js/popper.min.js' %}></script>
+    <!-- Latest compiled and minified Bootstrap -->
+    <script src={% static 'assets/bootstrap/js/bootstrap.min.js' %}></script>
+    <!-- owl-carousel min js  -->
+    <script src={% static 'assets/owlcarousel/js/owl.carousel.min.js' %}></script>
+    <!-- magnific-popup min js  -->
+    <script src={% static 'assets/js/magnific-popup.min.js' %}></script>
+    <!-- waypoints min js  -->
+    <script src={% static 'assets/js/waypoints.min.js' %}></script>
+    <!-- parallax js  -->
+    <script src={% static 'assets/js/parallax.js' %}></script>
+    <!-- countdown js  -->
+    <script src={% static 'assets/js/jquery.countdown.min.js' %}></script>
+    <!-- imagesloaded js -->
+    <script src={% static 'assets/js/imagesloaded.pkgd.min.js' %}></script>
+    <!-- isotope min js -->
+    <script src={% static 'assets/js/isotope.min.js' %}></script>
+    <!-- jquery.dd.min js -->
+    <script src={% static 'assets/js/jquery.dd.min.js' %}></script>
+    <!-- slick js -->
+    <script src={% static 'assets/js/slick.min.js' %}></script>
+    <!-- elevatezoom js -->
+    <script src={% static 'assets/js/jquery.elevatezoom.js' %}></script>
+    <!-- scripts js -->
+    <script src={% static 'assets/js/scripts.js' %}></script>
+    <!-- custom js  -->
+    <script src={% static 'myjs/script.js' %}></script>
+    <!-- photo-gallery  -->
+    <script src={% static 'myjs/bootstrap-lightbox.min.js' %}></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-lightbox/0.7.0/bootstrap-lightbox.min.js"
+        integrity="sha512-pG6Jpi0rC+Tc4UBLolT53rjjfGNuHBgEGqe6E29doS/zTJhSI9mGIwkiq+wSP1InaQs61vpQ+UhNgTUhyyYGDw=="
+        crossorigin="anonymous"></script> -->
+
+    <!-- DATA TABLE  -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js">
+    </script>
+
+</body>
+
+</html>

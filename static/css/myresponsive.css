@@ -1,0 +1,74 @@
+@media only screen and  (max-width: 700px){
+    .login{
+        width: 100%;
+    }
+}
+@media only screen and  (max-width: 769px){
+    .header-top .social-icon{
+        text-align: center;
+    }
+    .top-right{
+        float:none;
+        text-align: center;
+    }
+}
+@media only screen and  (max-width: 550px){
+    header .logo,.logo_light,.logo_dark{
+        width: auto !important;
+        height: 65px !important;
+        position: relative;
+    }
+    header .title{
+        position: absolute;
+        font-size: 30px;
+        font-family: 'Uni Neue', sans-serif;         
+        font-weight: 700;           
+        margin-top: 14px;
+    }
+    
+.navbar-toggler{
+    margin:26px 0  3px !important;
+} 
+}
+
+@media only screen and  (max-width: 392px){
+    header .logo,.logo_light,.logo_dark{
+        width: auto !important;
+        height: 60px !important;
+        position: relative;
+    }
+    header .title{
+        position: absolute;
+        font-size: 25px;
+        font-family: 'Uni Neue', sans-serif;         
+        font-weight: 700;           
+        margin-top: 17px;
+    }
+    
+.navbar-toggler{
+    margin:24px 0  3px !important;
+}
+    
+    
+}
+
+@media only screen and  (max-width: 331px){
+    header .logo,.logo_light,.logo_dark{
+        width: auto !important;
+        height: 58px !important;
+        position: relative;
+    }
+    header .title{
+        position: absolute;
+        font-size: 22px;
+        font-family: 'Uni Neue', sans-serif;         
+        font-weight: 700;           
+        margin-top: 14px;
+    }
+    
+.navbar-toggler{
+    margin:20px 0  3px !important;
+}
+    
+    
+}

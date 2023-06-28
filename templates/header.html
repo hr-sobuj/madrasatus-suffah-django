@@ -1,0 +1,79 @@
+{% load static %}
+<div class="header-top bg-dark">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-sm-12 col-md-5 col-lg-6">
+                <ul class="social-icon pt-0 pb-2">
+                    <li><a href="https://www.facebook.com/assuffah4ummah" target="_blank"><i class="fa fa-facebook text-light"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="https://www.youtube.com/channel/UCqSQC3uU5egNP_eCuXwLR8A" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-7 col-lg-6 pb-sm-1 pb-0">
+                <ul class="top-right pt-2 pb-2 pb-md-1 list-inline">
+                    <li class="list-inline-item"><a href="#"><i class="lnr lnr-user"></i> Student Login</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="list-inline-item"><a href={% url 'App_Login:profile' %}><i class="lnr lnr-user"></i>
+                            Teachers Profile</a></li>
+
+                    {% else %}
+                    <li class="list-inline-item"><a href={% url 'App_Login:login' %}><i class="lnr lnr-user"></i>
+                            Teachers Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="header_wrap fixed-top">
+    <div class="bottom_header dark_skin main_menu_uppercase">
+        <div class="container-lg">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href={% url 'App_Home:index' %}>
+                    <img class="logo_dark logo d-inline" src={% static 'assets/images/logo.png' %} alt="logo" />
+                    <h2 class="d-inline title">Madrasatus Suffah</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-expanded="false">
+                    <span class="ion-android-menu"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link nav_item font-weight-bold" href={% url 'App_Home:index' %}>Home</a></li>
+                        <li><a class="nav-link nav_item font-weight-bold" href={% url 'App_Home:academic' %}>Academic</a>
+                        </li>
+                        <li><a class="nav-link nav_item font-weight-bold" href={% url 'App_Home:admission' %}>Admission</a>
+                        </li>
+                        <li><a class="nav-link nav_item font-weight-bold" href={% url 'App_Home:gallery' %}>Gallery</a>
+                        </li>
+                        <li><a class="nav-link nav_item font-weight-bold"
+                                href={% url 'App_Home:donation' %}>Donation</a></li>
+                        <li><a class="nav-link nav_item font-weight-bold" href={% url 'App_Home:contact' %}>Contact
+                                Us</a></li>
+
+
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="bg-light">
+    <marquee behavior="" direction="" class="pt-1 d-inline">
+        
+        {% for text in marqueetext|slice:"5" %}
+        <span class="d-inline m-0 p-0 font-weight-bold"><a href={% url 'App_Home:notice' pk=text.pk %} class="text-danger d-inline">
+            {{ text }}  </a> </span>
+            {% if forloop.counter <= 4 %}
+            >>
+            {% endif %}
+        {% endfor %}
+    </marquee>
+</div>
